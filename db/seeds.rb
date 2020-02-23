@@ -16,7 +16,7 @@ r3= Round.create(start_time: 1582303454, end_time: 1582303462, succesful: true, 
 
 w1 = Word.create(text: "dog", difficulty: 'easy', round_id: 1)
 w1 = Word.create(text: "cat", difficulty: 'easy', round_id: 2)
-w1 = Word.create(text: "bird", difficulty: 'hard', round_id: 3)
+w1 = Word.create(text: "llamas in pajamas", difficulty: 'hard', round_id: 3)
 
 d1 = Drawing.create(round_id: 1, drawing_saved: "drawing1")
 d1 = Drawing.create(round_id: 2, drawing_saved: "drawing2")
