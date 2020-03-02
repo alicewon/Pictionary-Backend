@@ -1,3 +1,4 @@
+
 class PlayersController < ApplicationController
 
   def index
@@ -10,12 +11,16 @@ class PlayersController < ApplicationController
     render :json => players
   end
 
+  
+
   def create
-    player = Player.find_or_create_by(params.require(:player).permit(:username))
+    player = Player.new(username: params[:username], password: params[:password])
+    # player = Player.find_or_create_by(params(:player).permit(:username))
     if player.save
-      render :json => owner
+      render json: {success: "Account has been created. Please Log in"}
+       
     else
-      flash[:message]= player.errors.full_messages
+      render json: {error: "Could not create Account"}
     end
   end
 end
