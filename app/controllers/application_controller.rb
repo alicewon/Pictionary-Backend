@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::API
+  # before_action :authorized
 
   def issue_token(player)
     JWT.encode({player_id: player.id}, 'secret_key', 'HS256')
@@ -27,6 +28,10 @@ class ApplicationController < ActionController::API
   def logged_in?
     !!current_user
   end
+
+  # def authorized
+  #   render json: { message: 'Please log in' }, status: :unauthorized unless logged_in?
+  # end
 
 end
  
