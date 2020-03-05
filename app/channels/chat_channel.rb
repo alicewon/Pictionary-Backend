@@ -23,6 +23,13 @@ class ChatChannel < ApplicationCable::Channel
     ActionCable.server.broadcast("chat_channel", data)
   end
 
+
+  def create(opts)
+    Message.create(
+      text: opts.fetch('content')
+    )
+  end
+
   def unsubscribed
     # Any cleanup needed when channel is unsubscribed
   end
