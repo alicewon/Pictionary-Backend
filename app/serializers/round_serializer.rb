@@ -1,3 +1,3 @@
 class RoundSerializer < ActiveModel::Serializer
-  attributes :id, :start_time, :end_time, :succesful
+  attributes :id, :start_time, :end_time, :succesful, :messages
 end

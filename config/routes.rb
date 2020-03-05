@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  resources :messages
   resources :drawings
   resources :words
   resources :player_rounds
   resources :rounds
   resources :players
+  
 
   resources :auth, only: [:create]
 
